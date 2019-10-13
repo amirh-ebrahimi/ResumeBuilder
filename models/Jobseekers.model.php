@@ -64,3 +64,26 @@ function newJobseeker($username, $password_hash, $name, $family, $nationality, $
 
 
 }
+
+function getJobseeker($username,$password){
+
+    global $connection;
+    global $errors;
+
+    $query = "SELECT * FROM jobseekers WHERE username = '$username'";
+
+    $result = mysqli_query($connection,$query) or die("getJobseeker has an error");
+    $row = mysqli_fetch_all($result,1);
+    $user = reset($row);
+    mysqli_free_result($result);
+
+    if(!empty($user) && password_verify($password,$user["password"])){
+
+        return $user;
+    }else{
+
+        $errors[] = "Username or Password is not correct";
+        return false;
+    }
+
+}

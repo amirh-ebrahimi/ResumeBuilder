@@ -1,2 +1,2 @@
 <?php
-header("location:controllers/JobseekerRegister.controller.php");
+header("location:controllers/Login.controller.php");
