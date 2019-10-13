@@ -28,7 +28,7 @@ function newJobs($jobseeker_id,$job1, $job2, $job3)
                 $query .= ", null)";
             }
 
-            var_dump($query);exit();
+
             mysqli_query($connection, $query) or die("newJobs has an error");
             $job_ids[] = mysqli_insert_id($connection);
         }
