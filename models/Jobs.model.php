@@ -10,7 +10,7 @@ function newJobs($jobseeker_id,$job1, $job2, $job3)
 
         if (!empty($job)) {
 
-            $query = "INSERT INTO jobs VALUES (null, $jobseeker_id ,'$job[0]',$job[1]";
+            $query = "INSERT INTO jobs VALUES (null, $jobseeker_id ,'$job[0]','$job[1]'";
 
             if (!empty($job[2])) { // if end date is entered then...
 
@@ -28,6 +28,7 @@ function newJobs($jobseeker_id,$job1, $job2, $job3)
                 $query .= ", null)";
             }
 
+            var_dump($query);exit();
             mysqli_query($connection, $query) or die("newJobs has an error");
             $job_ids[] = mysqli_insert_id($connection);
         }
