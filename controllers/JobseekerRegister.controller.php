@@ -100,7 +100,7 @@ if (isset($_POST["jobseeker"]) && jobseekerFieldsAreFilled() && jobseekerValidat
 
     mysqli_close($connection);
 
-    header("location:Dashboard.controller.php");
+    header("location:Login.controller.php");
 
 } else {
 

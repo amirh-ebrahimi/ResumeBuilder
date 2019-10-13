@@ -21,6 +21,22 @@ function jobseekerFieldsAreFilled()
     }
 }
 
+function employerFieldsAreFilled(){
+
+    global $errors;
+
+    $fill = !empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["company"]) && !empty($_POST["phone"])
+        && !empty($_POST["area"]) && !empty($_POST["city"]);
+
+    if(!$fill){
+
+        $errors[] = "Please fill all the necessary fields";
+        return false;
+    }
+
+    return true;
+}
+
 function validateUsername()
 {
 
@@ -289,4 +305,9 @@ function loggedIn()
         header("location:LogIn.controller.php");
         exit();
     }
+}
+
+function employerValidation(){
+
+    return (validateUsername() & passIsStrong() & validatePhone() & validateName("city") & employerUsernameIsUnique($_POST["username"]));
 }
