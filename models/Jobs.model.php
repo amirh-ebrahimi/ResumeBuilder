@@ -10,7 +10,7 @@ function newJobs($jobseeker_id,$job1, $job2, $job3)
 
         if (!empty($job)) {
 
-            $query = "INSERT INTO jobs VALUES (null, $jobseeker_id ,'$job[0]'";
+            $query = "INSERT INTO jobs VALUES (null, $jobseeker_id ,'$job[0]',$job[1]";
 
             if (!empty($job[2])) { // if end date is entered then...
 
@@ -22,7 +22,7 @@ function newJobs($jobseeker_id,$job1, $job2, $job3)
 
             if (!empty($job[3])) { // if reason is entered then...
 
-                $query .= ", '$job[3]'"; // ... enter it to the query else...
+                $query .= ", '$job[3]')"; // ... enter it to the query else...
             } else { //... enter null.
 
                 $query .= ", null)";

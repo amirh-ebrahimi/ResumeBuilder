@@ -40,12 +40,12 @@ function emailIsUnique($email)
 
 }
 
-function newJobseeker($username, $password_hash, $name, $family, $nationality, $gender, $birth_date, $birth_place, $email, $phone, $details, $edu_id, $jobs_id)
+function newJobseeker($username, $password_hash, $name, $family, $nationality, $gender, $birth_date, $birth_place, $email, $phone, $details, $edu_id)
 {
     global $connection;
 
     $query = "INSERT INTO jobseekers VALUES (null,'$username','$password_hash','$name','$family','$nationality','$gender'
-                                            ,'$birth_date','$birth_place','$email','$phone',)";
+                                            ,'$birth_date','$birth_place','$email','$phone',";
 
     if (!empty($details)) {
 
