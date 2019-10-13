@@ -27,7 +27,7 @@ function getInterestId($interest){
 
     global $connection;
 
-    $query = "SELECT interests.ID FROM interestss WHERE interest_name = '$interest' ";
+    $query = "SELECT interests.ID FROM interests WHERE interest_name = '$interest' ";
     $result = mysqli_query($connection,$query) or die("getInterestId has an error");
     $row = mysqli_fetch_all($result);
     mysqli_free_result($result);

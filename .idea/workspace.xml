@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="861fc624-b3bc-43e6-ad37-5660518457f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/captcha.png" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/captcha.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Skills.model.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Skills.model.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +67,7 @@
       <workItem from="1570517245459" duration="14721000" />
       <workItem from="1570601768976" duration="298000" />
       <workItem from="1570869972696" duration="26676000" />
-      <workItem from="1570957206113" duration="4955000" />
+      <workItem from="1570957206113" duration="5823000" />
     </task>
     <servers />
   </component>

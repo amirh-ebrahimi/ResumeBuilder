@@ -44,6 +44,7 @@ function jobseekerSkillsPivot($jobseeker_id, $skills_id){
 
     foreach ($skills_id as $skill_id){
 
+        $skill_id = reset($skill_id);
         $query = "INSERT INTO jobseekers_has_skills VALUES (null, $jobseeker_id, $skill_id)";
         mysqli_query($connection,$query) or die("skill_jobseeker_pivot has an error");
     }
