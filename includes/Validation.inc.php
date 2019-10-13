@@ -191,6 +191,7 @@ function validateDateFormat($date)
     global $errors;
 
     $date_arr = explode('-', $date);
+
     if (!checkdate($date_arr[1], $date_arr[2], $date_arr[0])) {
 
         $errors[] = "Please Enter a valid date";
@@ -248,19 +249,20 @@ function validateAllJobseekerFormDates()
 
         $valid = $valid && validateDate($_POST["job2-start"]);
 
-        if(!empty($_POST["job1-end"])){
+        if(!empty($_POST["job2-end"])){
 
             $valid = $valid && validateDate($_POST["job2-end"]);
+
         }
 
     }
-    if(!empty(trim($_POST["job2-title"]))){
+    if(!empty(trim($_POST["job3-title"]))){
 
-        $valid = $valid && validateDate($_POST["job2-start"]);
+        $valid = $valid && validateDate($_POST["job3-start"]);
 
-        if(!empty($_POST["job1-end"])){
+        if(!empty($_POST["job3-end"])){
 
-            $valid = $valid && validateDate($_POST["job2-end"]);
+            $valid = $valid && validateDate($_POST["job3-end"]);
         }
 
     }
