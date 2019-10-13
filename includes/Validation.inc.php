@@ -6,7 +6,10 @@ function jobseekerFieldsAreFilled()
     $fill = !empty($_POST["name"]) && !empty($_POST["family"]) && !empty($_POST["nationality"]) && !empty($_POST["email"]) &&
         !empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["birth-date"]) && !empty($_POST["gpa"]) &&
         !empty($_POST["birth-place"]) && !empty($_POST["gender"]) && !empty($_POST["phone"]) && !empty($_POST["last-degree"]) &&
-        !empty($_POST["skills"]);
+        !empty($_POST["skills"] && !empty($_POST["captcha"]));
+
+
+
 
 
     if ($fill) {
@@ -187,9 +190,8 @@ function validateDateFormat($date)
 
     global $errors;
 
-    $date_arr = explode('/', $date);
-
-    if (!checkdate($date_arr[0], $date_arr[1], $date_arr[2])) {
+    $date_arr = explode('-', $date);
+    if (!checkdate($date_arr[1], $date_arr[2], $date_arr[0])) {
 
         $errors[] = "Please Enter a valid date";
         return false;
@@ -204,13 +206,15 @@ function dateIsSensible($date)
 
     global $errors;
 
+    $date_arr = explode('-', $date);
+
     if ($date > date("Y-m-d")) {
 
         $errors[] = "The Date can not be in future";
         return false;
     }
 
-    if ($date > "1920-01-01") {
+    if ($date_arr[0] < "1920") { // if the date year is less than 1920
 
         $errors[] = "The date is too old to be valid!";
         return false;

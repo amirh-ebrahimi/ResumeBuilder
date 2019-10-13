@@ -5,7 +5,7 @@ function usernameIsUnique($username)
     global $connection;
     global $errors;
 
-    $query = "SELECT * FROM jobseekers WHERE jobseekers.username '$username'";
+    $query = "SELECT * FROM jobseekers WHERE jobseekers.username ='$username'";
     $result = mysqli_query($connection, $query) or die("uniqueUsername has an error");
     $row = mysqli_fetch_all($result);
     mysqli_free_result($result);
@@ -25,7 +25,7 @@ function emailIsUnique($email)
     global $connection;
     global $errors;
 
-    $query = "SELECT * FROM jobseekers WHERE jobseekers.email '$email'";
+    $query = "SELECT * FROM jobseekers WHERE jobseekers.email = '$email'";
     $result = mysqli_query($connection, $query) or die("emailUnique has an error");
     $row = mysqli_fetch_all($result);
     mysqli_free_result($result);
